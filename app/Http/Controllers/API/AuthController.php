@@ -15,7 +15,7 @@ class AuthController extends Controller
             $request->all(),
             [
                 'name'=>'required',
-                'email'=>'required/email/unique:users,email',
+                'email'=>'required|email|unique:users,email',
                 'password'=>'required'
             ]
             );
@@ -45,7 +45,7 @@ class AuthController extends Controller
             $request->all(),
             [
 
-                'email'=>'required/email',
+                'email'=>'required|email',
                 'password'=>'required'
             ]
             );
@@ -84,7 +84,7 @@ class AuthController extends Controller
 
          return response()->json([
             'status'=>true,
-            'message'=>'Lpgout Successfully',
+            'message'=>'Logout Successfully',
             'user'=>$user,
         ],200);
     }
